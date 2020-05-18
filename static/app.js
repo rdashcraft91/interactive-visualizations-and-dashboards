@@ -120,7 +120,36 @@ function buildPlot(belly) {
                     .append("li")
                     .data(sample)
                     .text(`${sample[0]}: ${sample[1]}`)
-            })
+                })
+                
+                var gaugeData = [
+                    {
+                      domain: { x: [0, 1], y: [0, 1] },
+                      value: row.wfreq,
+                      title: { text: "Belly Button Washing Frequency<br><span style='font-size:0.8em;color:gray'>Washes per Week</span><br><span style='font-size:0.8em;color:gray'></span>"},
+                      subtitle: {text: "Washes per Week"},
+                      type: "indicator",
+                      mode: "gauge+number+delta",
+                      gauge: {
+                        axis: { range: [null, 9] },
+                        steps: [
+                          { range: [0, 1], color: "white" },
+                          { range: [1, 2], color: "black" },
+                          { range: [2, 3], color: "white" },
+                          { range: [3, 4], color: "black" },
+                          { range: [4, 5], color: "white" },
+                          { range: [5, 6], color: "black" },
+                          { range: [6, 7], color: "white" },
+                          { range: [7, 8], color: "black" },
+                          { range: [8, 9], color: "white" },
+                        ],
+                      }
+                    }
+                  ];
+                
+                var layout = { width: 600, height: 500, margin: { t: 0, b: 0 } };
+                
+                Plotly.newPlot('gauge', gaugeData, layout);
         }});
     });
 }
