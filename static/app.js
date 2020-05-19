@@ -1,4 +1,4 @@
-const url = 'https://rdashcraft91.github.io/interactive-visualizations-and-dashboards/static/samples.json'
+const url = 'https://rdashcraft91.github.io/interactive-visualizations-and-dashboards/samples.json'
 
 d3.json(url).then(function(data) {console.log(data)});
 
