@@ -1,7 +1,9 @@
-d3.json("/static/samples.json").then(function(data) {console.log(data)});
+const url = 'https://rdashcraft91.github.io/interactive-visualizations-and-dashboards/static/samples.json'
+
+d3.json(url).then(function(data) {console.log(data)});
 
  // Populate ID Dropdown
-d3.json("/static/samples.json").then(function(data) {
+d3.json(url).then(function(data) {
 
     var names = data.names;
     console.log(names);
