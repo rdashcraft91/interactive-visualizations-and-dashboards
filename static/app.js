@@ -1,5 +1,5 @@
 const url = 'https://rdashcraft91.github.io/interactive-visualizations-and-dashboards/samples.json'
-
+console.log(url);
 d3.json(url).then(function(data) {console.log(data)});
 
  // Populate ID Dropdown
@@ -40,7 +40,7 @@ function handleSubmit() {
   
 function buildPlot(belly) {
 
-    d3.json("/static/samples.json").then(function(data) {
+    d3.json(url).then(function(data) {
         // Grab values from the response json object to build the plots
         // var person = data.samples.map(row => row.id === belly)
         data.samples.forEach(function(row) {
